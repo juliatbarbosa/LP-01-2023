@@ -4,3 +4,6 @@ contador = 0
 while contador <= 100:
     print(contador)
     contador+=1
+
+for a in range(0, 101):
+    print(a)

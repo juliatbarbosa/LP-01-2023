@@ -10,3 +10,46 @@ MA >= 9,0               | A
 MA < 4,0                | E
 
 O algoritmo deve escrever o número do aluno, suas notas, a média dos exercícios, a média de aproveitamento, o conceito correspondente e a mensagem: APROVADO se o conceito for A, B ou C e REPROVADO se o conceito for D ou E. Pergunte se o usuário deseja digitar as notas de outro aluno S para sim e N para não """
+
+repetir = 'S'
+
+while repetir == 'S':
+    NI = input('Digite seu número de identificação: ')
+
+    Nota1 = float(input('Digite sua nota 1: '))
+    Nota2 = float(input('Digite sua nota 2: '))
+    Nota3 = float(input('Digite sua nota 3: '))
+
+    ME = int(input('Digite sua média dos exercícios: '))
+
+    MA = (Nota1 + Nota2 * 2 + Nota3 * 3 + ME )/7
+
+    if MA >= 9.0:
+        conceito = 'A'
+    elif MA >= 7.5 and MA < 9.0:
+        conceito = 'B'
+    elif MA >= 6.0 and MA < 7.5:
+        conceito = 'C'
+    elif MA >= 4.0 and MA < 6.0:
+        conceito = 'D'
+    else:
+        conceito = 'E'
+
+
+    if conceito == 'A' or conceito == 'B' or conceito == 'C':
+        situacao = 'APROVADO'
+    else:
+        situacao = 'REPROVADO'
+
+    print(f'Número do aluno: {NI}')
+    print(f'Notas: \n\tNota 1: {Nota1} \n\tNota 2: {Nota2} \n\tNota 3: {Nota3}')
+    print(f'A média dos exercícios é {ME}')
+    print(f'A média de aproveitamento é: {MA:.1f}')
+    print(f'Seu conceito é {conceito} e você foi {situacao}!')
+    
+    resposta = input('Deseja digitar as notas de outro aluno? (Responda com S para SIM e N para NÃO): ')
+
+    if resposta == 'S':
+        repetir = 'S'
+    else:
+        repetir = 'N'
